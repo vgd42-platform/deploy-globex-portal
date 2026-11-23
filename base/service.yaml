@@ -1,0 +1,13 @@
+# Cluster-internal address of the app. In the demo you reach it with port-forward.
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal
+  labels:
+    app.kubernetes.io/name: portal
+spec:
+  selector:
+    app.kubernetes.io/name: portal
+  ports:
+    - port: 80
+      targetPort: 8080
